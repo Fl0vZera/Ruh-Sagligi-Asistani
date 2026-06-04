@@ -15,7 +15,8 @@ import {
   Lock,
   ArrowRight,
   ExternalLink,
-  Phone
+  Phone,
+  Bot
 } from "lucide-react";
 import { motion, AnimatePresence } from "motion/react";
 
@@ -398,9 +399,13 @@ export default function App() {
                     <div className={`w-10 h-10 rounded-xl flex-shrink-0 flex items-center justify-center border shadow-xs transition ${
                       msg.role === "user" 
                         ? "bg-emerald-600 text-white border-emerald-500" 
-                        : "bg-slate-900 text-white border-slate-950 font-serif italic font-bold"
+                        : "bg-slate-900 text-white border-slate-950"
                     }`}>
-                      {msg.role === "user" ? "K" : "RY"}
+                      {msg.role === "user" ? (
+                        <User className="w-5 h-5 text-white" />
+                      ) : (
+                        <Bot className="w-5 h-5 text-white" />
+                      )}
                     </div>
 
                     {/* Chat Bubble matching Geometric styling */}
@@ -422,8 +427,8 @@ export default function App() {
                 {/* Typing status loading state */}
                 {isLoading && (
                   <div className="flex gap-4">
-                    <div className="w-10 h-10 rounded-xl bg-slate-900 flex-shrink-0 flex items-center justify-center shadow-xs animate-pulse font-serif italic font-bold text-white text-xs">
-                      RY
+                    <div className="w-10 h-10 rounded-xl bg-slate-900 flex-shrink-0 flex items-center justify-center shadow-xs animate-pulse text-white">
+                      <Bot className="w-5 h-5 text-white" />
                     </div>
                     <div className="max-w-[70%] bg-white border border-slate-200 p-5 rounded-2xl rounded-tl-none shadow-sm flex items-center gap-2">
                       <div className="w-2 h-2 bg-emerald-500 rounded-full animate-bounce [animation-delay:0ms]" />

@@ -1,5 +1,5 @@
 {
-  "name": "Ruh Sağlığı Yönlendirme Asistanı",
+  "name": "RuhSağlığı Yardımcısı",
   "description": "Kullanıcı belirtilerini değerlendirerek en uygun uzman yönlendirmesini yapan akıllı chatbot.",
   "requestFramePermissions": [],
   "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
